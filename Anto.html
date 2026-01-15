@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reenoyee Anthonis | Operations & Project Manager</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ---------------------------------------------------------
+        DESIGN SYSTEM 
+        Colors: Off-White (#FDFBF7) + Beige (#F5F0E6) + Dark Brown (#3B2F2F)
+        Fonts: Playfair Display (Headings) + Lato (Body)
+        ---------------------------------------------------------
+        */
+
+        :root {
+            --bg-color: #FDFBF7;       
+            --card-bg: #F5F0E6;        
+            --primary-text: #3B2F2F;   
+            --secondary-text: #5D4037; 
+            --accent-beige: #DCCEB8;   
+            --white: #ffffff;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            line-height: 1.7; 
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--primary-text);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px; /* Slightly wider to fit 2 cards */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--accent-beige);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 700; 
+            font-size: 1.6rem;
+            color: var(--primary-text);
+            letter-spacing: 0px; 
+            font-style: italic; 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--primary-text);
+            font-weight: 400;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-text);
+        }
+
+        .btn-nav {
+            border: 1px solid var(--primary-text);
+            padding: 8px 24px;
+            border-radius: 2px; 
+            font-weight: 700 !important;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-text);
+            color: var(--bg-color) !important;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .subtitle {
+            display: block;
+            font-family: var(--font-body); 
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem; 
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 45px;
+            color: var(--secondary-text);
+            font-weight: 300;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* IMAGE STYLING */
+        .hero-img-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            max-width: 400px; 
+            height: auto;
+            border-radius: 4px; 
+            box-shadow: 15px 15px 0px var(--accent-beige); 
+            border: 1px solid var(--accent-beige);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: var(--primary-text);
+            color: var(--bg-color);
+            padding: 16px 36px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #2a2020;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 47, 47, 0.2);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--primary-text);
+            color: var(--primary-text);
+            padding: 16px 36px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            font-size: 0.9rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0eadd;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 80px;
+            margin-top: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-style: italic; 
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px; 
+            background-color: var(--secondary-text);
+            margin-top: 10px;
+        }
+
+        .skills-list {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skills-list li {
+            background-color: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--primary-text);
+            border: 1px solid var(--accent-beige);
+            letter-spacing: 0.5px;
+        }
+
+        .stat-card {
+            background-color: var(--primary-text);
+            color: var(--bg-color);
+            padding: 45px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: var(--bg-color);
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+            line-height: 1;
+            font-family: var(--font-heading);
+        }
+
+        .stat-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+
+        /* --- EXPERIENCE SECTION --- */
+        .section-bg {
+            background-color: #F2EEE6; 
+        }
+
+        .timeline {
+            margin-top: 60px;
+            border-left: 1px solid var(--primary-text); 
+            padding-left: 50px;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -55px; 
+            top: 8px;
+            width: 11px;
+            height: 11px;
+            background-color: var(--bg-color);
+            border-radius: 50%;
+            border: 2px solid var(--primary-text); 
+        }
+
+        .timeline-date {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--secondary-text);
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--secondary-text);
+            font-style: italic;
+            font-family: var(--font-heading);
+        }
+
+        .timeline-content ul {
+            list-style: none; 
+            margin-left: 0;
+            color: #4a3b32;
+        }
+
+        .timeline-content li {
+            margin-bottom: 12px; 
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .timeline-content li::before {
+            content: '•';
+            color: var(--secondary-text);
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            line-height: 1.5rem;
+        }
+
+        /* --- CERTIFICATIONS (2 PER LINE) --- */
+        .cert-grid {
+            display: grid;
+            /* 2 Columns by default */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .cert-card {
+            background-color: var(--white);
+            border: 1px solid var(--accent-beige);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Stack Vertical inside the card to keep it clean */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(59, 47, 47, 0.08);
+            border-color: var(--secondary-text);
+        }
+
+        /* PDF Viewer Container */
+        .pdf-viewer-block {
+            width: 100%;
+            height: 300px; /* Fixed height for clean grid */
+            background-color: #f0f0f0;
+            border-bottom: 1px solid var(--accent-beige);
+            position: relative;
+            
+            /* CRITICAL: Hides scrollbars */
+            overflow: hidden; 
+        }
+        
+        /* The Object Tag */
+        .pdf-viewer-block object {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: none;
+            
+            /* CRITICAL: Disables mouse interaction (scrolling/clicking inside PDF) */
+            pointer-events: none; 
+            
+            /* Fit cover ensures it fills the box without weird bars */
+            object-fit: cover; 
+        }
+
+        /* Card Text Details */
+        .cert-details {
+            padding: 25px;
+            flex-grow: 1; /* Ensures text area fills remaining height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cert-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+            line-height: 1.3;
+            color: var(--primary-text);
+        }
+
+        .cert-meta {
+            margin-top: 10px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .cert-issuer, .cert-id {
+            font-size: 0.85rem;
+            color: #777;
+            display: block;
+            margin-bottom: 4px;
+            font-family: var(--font-body);
+        }
+        
+        .view-btn {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+        
+        .view-btn:hover {
+            border-bottom: 1px solid var(--secondary-text);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-text);
+            color: var(--bg-color);
+            padding: 100px 0 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .footer-left h2 {
+            color: var(--bg-color);
+            margin-bottom: 25px;
+            font-size: 3rem;
+            font-style: italic;
+        }
+
+        .footer-intro {
+            max-width: 400px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .contact-details p {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-details strong {
+            color: var(--accent-beige);
+            min-width: 80px;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            color: var(--bg-color);
+            border: 1px solid var(--accent-beige);
+            padding: 12px 30px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-beige);
+            color: var(--primary-text);
+        }
+
+        .copyright {
+            margin-top: 80px;
+            font-size: 0.8rem;
+            color: #8d7b7b;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #4a3b32;
+            padding-top: 30px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+            .hero-btns { justify-content: center; }
+            .hero-text p { margin: 0 auto 40px auto; }
+            .hero-img-wrapper { order: -1; margin-bottom: 20px; }
+            .hero-img-wrapper img { max-width: 300px; }
+            
+            /* Collapse to 1 column on tablets/mobile */
+            .cert-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .nav-links { display: none; }
+            .timeline { padding-left: 20px; border-left: none; }
+            .timeline-item::before { display: none; }
+            .footer-content { flex-direction: column; }
+            .stat-card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">PORTFOLIO</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="subtitle">PROJECT & OPERATIONS MANAGER</span>
+                <h1>I am Reenoyee Anthonis</h1>
+                <p>Operations and Project Manager with 3+ years of experience in startup co-working environments, facility management, and vendor coordination.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">Get in Touch</a>
+                    <a href="#experience" class="btn-secondary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-img-wrapper">
+                <img src="IMG_7128.PNG" alt="Reenoyee Anthonis - Operations Manager">
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Operations and Project Manager with 3 years of experience in startup co-working and dedicated office environments, managing end-to-end workspace setup and daily operations.</p>
+                    <p>Experienced in office fit-outs, vendor coordination, facility management, and cost control across multiple sites. Strong hands-on executor with the ability to manage fast-paced projects, streamline processes, and deliver efficient, member-focused workspaces that support business growth.</p>
+                    <ul class="skills-list">
+                        <li>Process Improvement</li>
+                        <li>Process Integration</li>
+                        <li>Property Management</li>
+                        <li>Cafeteria Management</li>
+                        <li>Security Management</li>
+                        <li>Housekeeping Management</li>
+                        <li>Administration Management</li>
+                        <li>Facility Management</li>
+                        <li>Vendor Selection</li>
+                        <li>Vendor Negotiation</li>
+                        <li>Vendor Development</li>
+                        <li>Cost Management</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>3+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>5+</h3>
+                        <p>Specialized Certifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section-bg section-padding">
+        <div class="container">
+            <h2 class="section-title">Career Trajectory</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Project and Operations Manager</h3>
+                        <h4>EBC SPACE</h4>
+                        <ul>
+                            <li>Managed day-to-day operations of dedicated and managed office spaces, ensuring smooth functioning and high service standards for enterprise clients.</li>
+                            <li>Oversaw facility management services, including housekeeping, security, MEP systems, utilities, and preventive maintenance.</li>
+                            <li>Coordinated with multiple vendors and service partners, monitoring performance, SLAs, and operational costs.</li>
+                            <li>Ensured compliance with statutory requirements, fire & safety norms, and internal operational SOPs.</li>
+                            <li>Conducted regular site inspections and audits to identify gaps, improve efficiency, and maintain workplace standards.</li>
+                            <li>Acted as a key point of contact for client operational requirements, ensuring timely issue resolution and service continuity.</li>
+                            <li>Supported project-related activities as required, including minor fit-outs, office modifications, and space reconfigurations.</li>
+                            <li>Coordinated with contractors and internal teams to ensure smooth execution and handover of project-related work.</li>
+                            <li>Maintained operational documentation, reports, and vendor records to support governance and transparency.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2022 - Sep 2024</div>
+                    <div class="timeline-content">
+                        <h3>Centre Manager</h3>
+                        <h4>Hustlehub (Clomoso Technologies)</h4>
+                        <ul>
+                            <li>Managed end-to-end centre operations, ensuring smooth day-to-day functioning of the co-working facility.</li>
+                            <li>Oversaw facility management services, including housekeeping, security, utilities, internet, and maintenance.</li>
+                            <li>Acted as the primary point of contact for members, addressing operational issues, service requests, and escalations.</li>
+                            <li>Coordinated and managed vendors and service partners, ensuring SLA adherence and service quality.</li>
+                            <li>Monitored operational costs, inventory, and consumables, ensuring efficient utilisation and cost control.</li>
+                            <li>Ensured compliance with safety standards, operational policies, and centre SOPs.</li>
+                            <li>Conducted regular centre inspections and audits to maintain cleanliness, safety, and service standards.</li>
+                            <li>Managed front desk and support staff, including scheduling, task allocation, and performance monitoring.</li>
+                            <li>Supported member onboarding and offboarding, ensuring a smooth and positive experience.</li>
+                            <li>Prepared operational reports and maintained documentation related to vendors, incidents, and daily operations.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">6 Months Internship</div>
+                    <div class="timeline-content">
+                        <h3>Internship Trainee</h3>
+                        <h4>Samsung India</h4>
+                        <ul>
+                            <li>Completed a structured training and internship program on new and emerging home appliance technologies.</li>
+                            <li>Gained hands-on exposure to modern appliances, including refrigerators, washing machines, air conditioners, and smart home solutions.</li>
+                            <li>Learned about technology integration, energy efficiency, and smart features, enhancing understanding of appliance functionality and innovations.</li>
+                            <li>Completed the internship course, demonstrating understanding of key concepts and practical applications in the home appliance domain.</li>
+                            <li>Learned about technology integration, energy efficiency, troubleshooting, and appliance maintenance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Certifications & Credentials</h2>
+            <div class="cert-grid">
+                
+                <div class="cert-card">
+                    <div class="pdf-viewer-block">
+                        <object data="UC-4cbb2637-635d-46ab-8c53-3f83ff691bed.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p style="text-align:center; padding-top:100px;">PDF Preview Unavailable</p>
+                        </object>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Certified Facility Manager (CFM) Essential Training</h4>
+                        <div class="cert-meta">
+                            <span class="cert-issuer">Udemy | Issued: July 16, 2024</span>
+                            <span class="cert-id">Ref: UC-4cbb2637-635d-46ab-8c53-3f83ff691bed</span>
+                        </div>
+                        <a href="UC-4cbb2637-635d-46ab-8c53-3f83ff691bed.pdf" class="view-btn" target="_blank">Full View ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="pdf-viewer-block">
+                        <object data="UC-ed46e942-449c-487d-a297-206ad4e3d625.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p style="text-align:center; padding-top:100px;">PDF Preview Unavailable</p>
+                        </object>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Operations Management A-Z: Business Processes</h4>
+                        <div class="cert-meta">
+                            <span class="cert-issuer">Udemy | Issued: Dec 30, 2024</span>
+                            <span class="cert-id">Ref: UC-ed46e942-449c-487d-a297-206ad4e3d625</span>
+                        </div>
+                        <a href="UC-ed46e942-449c-487d-a297-206ad4e3d625.pdf" class="view-btn" target="_blank">Full View ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="pdf-viewer-block">
+                        <object data="UC-707e2856-6747-4cd0-bcd6-db65b9e7ba13.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p style="text-align:center; padding-top:100px;">PDF Preview Unavailable</p>
+                        </object>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Facility Management: Predictive Maintenance & AI</h4>
+                        <div class="cert-meta">
+                            <span class="cert-issuer">Engineering Hub Academy | Issued: Jan 15, 2026</span>
+                            <span class="cert-id">Ref: UC-707e2856-6747-4cd0-bcd6-db65b9e7ba13</span>
+                        </div>
+                        <a href="UC-707e2856-6747-4cd0-bcd6-db65b9e7ba13.pdf" class="view-btn" target="_blank">Full View ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="pdf-viewer-block">
+                        <object data="UC-11162b0d-6cec-4a07-9d6e-735aa5f04653.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p style="text-align:center; padding-top:100px;">PDF Preview Unavailable</p>
+                        </object>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Certificate in Facility Management & Corp Real Estate</h4>
+                        <div class="cert-meta">
+                            <span class="cert-issuer">Udemy | Issued: Jan 13, 2026</span>
+                            <span class="cert-id">Ref: UC-11162b0d-6cec-4a07-9d6e-735aa5f04653</span>
+                        </div>
+                        <a href="UC-11162b0d-6cec-4a07-9d6e-735aa5f04653.pdf" class="view-btn" target="_blank">Full View ↗</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="pdf-viewer-block">
+                        <object data="UC-36cab266-c30e-4d63-809f-d5ebb3fc8926%20(1).pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p style="text-align:center; padding-top:100px;">PDF Preview Unavailable</p>
+                        </object>
+                    </div>
+                    <div class="cert-details">
+                        <h4>The Complete Facility Management Course</h4>
+                        <div class="cert-meta">
+                            <span class="cert-issuer">Engineering Hub Academy | Issued: Jan 14, 2026</span>
+                            <span class="cert-id">Ref: UC-36cab266-c30e-4d63-809f-d5ebb3fc8926</span>
+                        </div>
+                        <a href="UC-36cab266-c30e-4d63-809f-d5ebb3fc8926%20(1).pdf" class="view-btn" target="_blank">Full View ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Let's Connect.</h2>
+                <p class="footer-intro">I am open to opportunities in Operations and Project Management. Let's discuss how I can help optimize your facility operations.</p>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> reenoyee01@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 8123099011</p>
+                    <p><strong>Location:</strong> BENGALURU, INDIA</p>
+                </div>
+                <div class="social-links">
+                    <a href="http://linkedin.com/in/reenoyee-anthonis-8b389822a" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="footer-right"></div>
+            <p class="copyright">© 2026 Reenoyee Anthonis. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
