@@ -60,7 +60,7 @@
         }
 
         .container {
-            max-width: 1200px; /* Slightly wider to fit 2 cards */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -91,8 +91,8 @@
             font-weight: 700; 
             font-size: 1.6rem;
             color: var(--primary-text);
-            letter-spacing: 0px; 
-            font-style: italic; 
+            letter-spacing: 1px; 
+            text-transform: uppercase;
         }
 
         .nav-links {
@@ -366,10 +366,9 @@
             line-height: 1.5rem;
         }
 
-        /* --- CERTIFICATIONS (2 PER LINE) --- */
+        /* --- CERTIFICATIONS --- */
         .cert-grid {
             display: grid;
-            /* 2 Columns by default */
             grid-template-columns: repeat(2, 1fr); 
             gap: 40px;
             margin-top: 60px;
@@ -381,8 +380,6 @@
             border-radius: 4px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            
-            /* Stack Vertical inside the card to keep it clean */
             display: flex;
             flex-direction: column;
         }
@@ -393,36 +390,27 @@
             border-color: var(--secondary-text);
         }
 
-        /* PDF Viewer Container */
         .pdf-viewer-block {
             width: 100%;
-            height: 300px; /* Fixed height for clean grid */
+            height: 300px;
             background-color: #f0f0f0;
             border-bottom: 1px solid var(--accent-beige);
             position: relative;
-            
-            /* CRITICAL: Hides scrollbars */
             overflow: hidden; 
         }
         
-        /* The Object Tag */
         .pdf-viewer-block object {
             width: 100%;
             height: 100%;
             display: block;
             border: none;
-            
-            /* CRITICAL: Disables mouse interaction (scrolling/clicking inside PDF) */
             pointer-events: none; 
-            
-            /* Fit cover ensures it fills the box without weird bars */
             object-fit: cover; 
         }
 
-        /* Card Text Details */
         .cert-details {
             padding: 25px;
-            flex-grow: 1; /* Ensures text area fills remaining height */
+            flex-grow: 1; 
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -473,9 +461,9 @@
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 60px;
+            flex-direction: column; /* Stack vertically */
+            align-items: flex-start;
+            gap: 30px;
         }
 
         .footer-left h2 {
@@ -486,10 +474,14 @@
         }
 
         .footer-intro {
-            max-width: 400px;
-            margin-bottom: 30px;
+            max-width: 500px;
+            margin-bottom: 40px;
             opacity: 0.8;
             font-weight: 300;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
         }
 
         .contact-details p {
@@ -497,7 +489,7 @@
             font-size: 1.05rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .contact-details strong {
@@ -508,9 +500,30 @@
             font-size: 0.85rem;
             letter-spacing: 1px;
         }
+        
+        /* New Resume Button */
+        .btn-resume {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: var(--accent-beige);
+            color: var(--primary-text);
+            padding: 14px 35px;
+            border-radius: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            margin-right: 20px;
+        }
+        
+        .btn-resume:hover {
+            background-color: var(--white);
+            color: var(--primary-text);
+        }
 
         .social-links {
-            margin-top: 40px;
+            display: inline-block;
         }
 
         .social-links a {
@@ -550,8 +563,6 @@
             .hero-text p { margin: 0 auto 40px auto; }
             .hero-img-wrapper { order: -1; margin-bottom: 20px; }
             .hero-img-wrapper img { max-width: 300px; }
-            
-            /* Collapse to 1 column on tablets/mobile */
             .cert-grid { grid-template-columns: 1fr; }
         }
 
@@ -561,8 +572,8 @@
             .nav-links { display: none; }
             .timeline { padding-left: 20px; border-left: none; }
             .timeline-item::before { display: none; }
-            .footer-content { flex-direction: column; }
             .stat-card { padding: 30px; }
+            .btn-resume, .social-links { display: block; width: 100%; text-align: center; margin-bottom: 15px; }
         }
     </style>
 </head>
@@ -584,7 +595,7 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <span class="subtitle">PROJECT & OPERATIONS MANAGER</span>
-                <h1>I am Reenoyee Anthonis</h1>
+                <h1>Reenoyee Anthonis</h1>
                 <p>Operations and Project Manager with 3+ years of experience in startup co-working environments, facility management, and vendor coordination.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn-primary">Get in Touch</a>
@@ -640,7 +651,7 @@
                 <div class="timeline-item">
                     <div class="timeline-date">Sep 2024 - Present</div>
                     <div class="timeline-content">
-                        <h3>Project and Operations Manager</h3>
+                        <h3>Operations and Project Manager</h3>
                         <h4>EBC SPACE</h4>
                         <ul>
                             <li>Managed day-to-day operations of dedicated and managed office spaces, ensuring smooth functioning and high service standards for enterprise clients.</li>
@@ -671,20 +682,6 @@
                             <li>Managed front desk and support staff, including scheduling, task allocation, and performance monitoring.</li>
                             <li>Supported member onboarding and offboarding, ensuring a smooth and positive experience.</li>
                             <li>Prepared operational reports and maintained documentation related to vendors, incidents, and daily operations.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">6 Months Internship</div>
-                    <div class="timeline-content">
-                        <h3>Internship Trainee</h3>
-                        <h4>Samsung India</h4>
-                        <ul>
-                            <li>Completed a structured training and internship program on new and emerging home appliance technologies.</li>
-                            <li>Gained hands-on exposure to modern appliances, including refrigerators, washing machines, air conditioners, and smart home solutions.</li>
-                            <li>Learned about technology integration, energy efficiency, and smart features, enhancing understanding of appliance functionality and innovations.</li>
-                            <li>Completed the internship course, demonstrating understanding of key concepts and practical applications in the home appliance domain.</li>
-                            <li>Learned about technology integration, energy efficiency, troubleshooting, and appliance maintenance.</li>
                         </ul>
                     </div>
                 </div>
@@ -777,6 +774,22 @@
                     </div>
                 </div>
 
+                <div class="cert-card">
+                    <div class="pdf-viewer-block">
+                        <object data="Adobe%20Scan%2015%20Jan%202026.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p style="text-align:center; padding-top:100px;">PDF Preview Unavailable</p>
+                        </object>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Advanced Repair & Industrial Skills Enhancement</h4>
+                        <div class="cert-meta">
+                            <span class="cert-issuer">Samsung Technical School | Govt Model ITI</span>
+                            <span class="cert-id">Issued: Nov 30, 2021</span>
+                        </div>
+                        <a href="Adobe%20Scan%2015%20Jan%202026.pdf" class="view-btn" target="_blank">Full View ↗</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -786,16 +799,20 @@
             <div class="footer-left">
                 <h2>Let's Connect.</h2>
                 <p class="footer-intro">I am open to opportunities in Operations and Project Management. Let's discuss how I can help optimize your facility operations.</p>
+                
                 <div class="contact-details">
                     <p><strong>Email:</strong> reenoyee01@gmail.com</p>
                     <p><strong>Phone:</strong> +91 8123099011</p>
-                    <p><strong>Location:</strong> BENGALURU, INDIA</p>
+                    <p><strong>Location:</strong> Bengaluru, INDIA</p>
                 </div>
+
+                <a href="Resume%20(5).pdf" class="btn-resume" target="_blank">Download Resume ⇩</a>
+
                 <div class="social-links">
                     <a href="http://linkedin.com/in/reenoyee-anthonis-8b389822a" target="_blank">LinkedIn Profile</a>
                 </div>
             </div>
-            <div class="footer-right"></div>
+            
             <p class="copyright">© 2026 Reenoyee Anthonis. All Rights Reserved.</p>
         </div>
     </footer>
